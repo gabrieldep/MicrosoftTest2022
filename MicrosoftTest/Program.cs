@@ -11,7 +11,7 @@ namespace MicrosoftTest
         }
 
         #region DigitsSum
-        internal static int DigitsSum(int N)
+        public static int DigitsSum(int N)
         {
             int sum = GetSum(N) * 2;
             for (int i = N; i < int.MaxValue; GetNextCompare(ref i))
@@ -20,7 +20,7 @@ namespace MicrosoftTest
             return -1;
         }
 
-        internal static void GetNextCompare(ref int N)
+        private static void GetNextCompare(ref int N)
         {
             var digits = N.ToString().Select(c => c - '0').ToList();
             if (digits.All(d => d == 9))
@@ -36,7 +36,7 @@ namespace MicrosoftTest
             N = result;
         }
 
-        internal static int GetSum(int N)
+        private static int GetSum(int N)
         {
             int sum = 0;
             while (N > 0)
@@ -49,7 +49,7 @@ namespace MicrosoftTest
         #endregion
 
         #region EqualCars
-        internal static int[] EqualCars(string[] cars)
+        public static int[] EqualCars(string[] cars)
         {
             int[] arrInt = new int[cars.Length];
             for (int i = 0; i < cars.Length; i++)
@@ -62,7 +62,7 @@ namespace MicrosoftTest
             return arrInt;
         }
 
-        internal static bool IsEquals(string a, string b)
+        private static bool IsEquals(string a, string b)
         {
             if (a.Equals(b))
                 return true;
@@ -80,7 +80,7 @@ namespace MicrosoftTest
         #endregion
 
         #region EvenWord
-        internal static int EvenWord(string S)
+        public static int EvenWord(string S)
         {
             int remotions = 0;
             var arrInt = new int[26];
